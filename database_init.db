@@ -1,0 +1,9 @@
+require_relative 'db'
+
+DB.create_table(:events) do
+  primary_key :id
+  Date :date, :null=>false
+  String :text, :null=>false
+  String :type, :null=>false
+  String :url, :null=>false
+end
