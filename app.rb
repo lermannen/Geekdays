@@ -5,17 +5,6 @@ require 'sinatra/base'
 
 require_relative 'db'
 
-module DateValidation
-  def validate(year, month, day)
-    begin
-      date = Date.parse(year, month, day)
-      return true
-    rescue ArgumentError
-      return false
-    end
-  end
-end
-
 class Geekdays < Sinatra::Base
   include DateValidation
 
